@@ -159,8 +159,8 @@ return [
         My custom Providers
         */
 
-        Barryvdh\Debugbar\ServiceProvider::class
-
+        Barryvdh\Debugbar\ServiceProvider::class,
+        
     ],
 
     /*
