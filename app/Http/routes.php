@@ -14,7 +14,7 @@
 Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', function () {
-        return view('welcome');
+        return view('index');
     });
 
      
@@ -23,10 +23,10 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 
-Route::get('about',  ['as' => 'about.index' ,'uses'=> function(){return 'about.index';}]);
+Route::get('about',  ['as' => 'about.index' ,'uses'=> function(){return view('about');}]);
     Route::get('hot',    ['as' => 'posts.hot' ,'uses'=> function(){return 'post.hot';}]);
     Route::post('posts',  ['as'=> 'posts.store','uses'=>function(){return 'post.store';}]);
-    Route::get('posts',  ['as'=> 'posts.index','uses'=>function(){return 'post.index';}]);
+    Route::get('post',  ['as'=> 'posts.index','uses'=>function(){return view('post');}]);
     Route::get('posts/create',  ['as'=> 'posts.create','uses'=>function(){return 'post.create';}]);
     Route::delete('posts/{id}',['as' => 'posts.destory','uses'=>function(){return 'post.destory';}]);
     Route::patch('posts/{id}',['as' => 'posts.update','uses'=>function(){return 'post.update';}]);
