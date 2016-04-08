@@ -26,7 +26,7 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
         		'sub_title'=>$faker->sentence,
         		'content' =>$faker->paragraph,
         		'page_view' => rand(0,20),
-        		'created_at' => \Carbon\Carbon::now()->addDays(rand(0,20)),
+        		'created_at' => $faker->dateTime(),
     ];
 });
 
@@ -38,7 +38,7 @@ $factory->define(App\Comment::class, function (Faker\Generator $faker) {
         'email' => $faker->safeEmail,
         'content' =>$faker->paragraph,
         'post_id' => rand(0,20),
-        'created_at' => \Carbon\Carbon::now()->addDays(rand(0,20)),
+        'created_at' => $faker->dateTime(),
     ];
 });
 

@@ -60,7 +60,7 @@
                         <a href="post">Sample Post</a>
                     </li>
                     <li>
-                        <a href="contact">Contact</a>
+                        <a href="test">Test</a>
                     </li>
                 </ul>
             </div>

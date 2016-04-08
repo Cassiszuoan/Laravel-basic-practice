@@ -11,31 +11,29 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-
-    Route::get('/', function () {
-        return view('index');
-    });
+    
 
      
 
 
-});
+//
+Route::get('/',  ['as' => 'Home.index' ,'uses'=> 'Controller@home']);
+Route::get('about',  ['as' => 'about.index' ,'uses'=> 'Controller@about']);
 
 
-Route::get('about',  ['as' => 'about.index' ,'uses'=> function(){return view('about');}]);
-    Route::get('hot',    ['as' => 'posts.hot' ,'uses'=> function(){return 'post.hot';}]);
-    Route::post('posts',  ['as'=> 'posts.store','uses'=>function(){return 'post.store';}]);
-    Route::get('post',  ['as'=> 'posts.index','uses'=>function(){return view('post');}]);
-    Route::get('posts/create',  ['as'=> 'posts.create','uses'=>function(){return 'post.create';}]);
-    Route::delete('posts/{id}',['as' => 'posts.destory','uses'=>function(){return 'post.destory';}]);
-    Route::patch('posts/{id}',['as' => 'posts.update','uses'=>function(){return 'post.update';}]);
-    Route::get('posts/{id}',['as' => 'posts.show','uses'=>function(){return 'post.show';}]);
-    Route::post('posts/{id}/comment',['as' => 'posts.comment','uses'=>function(){return 'post.comment';}]);
-    Route::get('posts/{id}/edit',['as' => 'posts.edit','uses'=>function(){return 'post.edit';}]);
-    Route::get('random',['as' => 'posts.random','uses'=>function(){return 'post.random';}]);
+
+//Posts
+Route::get('hot',    ['as' => 'posts.hot' ,'uses'=> 'PostsController@hot']);
+Route::patch('posts/{id}',['as' => 'posts.update','uses'=>'PostsController@update']);
+Route::post('posts/{id}/comment',['as' => 'posts.comment','uses'=>'PostsController@comment']);
+Route::get('random',['as' => 'posts.random','uses'=>'PostsController@random']); 
+Route::get('post',  ['as'=> 'posts.index','uses'=>'PostsController@index']);
+Route::get('posts/create',  ['as'=> 'posts.create','uses'=>'PostsController@create']);
+Route::get('posts/{id}',['as' => 'posts.show','uses'=>'PostsController@show']);
+Route::get('posts/{id}/edit',['as' => 'posts.edit','uses'=>'PostsController@edit']);
+Route::delete('posts/{id}',['as' => 'posts.destory','uses'=>'PostsController@destory']);
 
 
-  
+//tests
 
-
+Route::get('test',  ['as'=> 'test.index','uses'=>'PostsController@index']);
