@@ -17,8 +17,8 @@
 
 
 //
-Route::get('/',  ['as' => 'Home.index' ,'uses'=> 'Controller@home']);
-Route::get('about',  ['as' => 'about.index' ,'uses'=> 'Controller@about']);
+Route::get('/',  ['as' => 'Home.index' ,'uses'=> 'HomeController@index']);
+Route::get('about',  ['as' => 'about.index' ,'uses'=> 'AboutController@index']);
 
 
 
@@ -30,10 +30,8 @@ Route::get('random',['as' => 'posts.random','uses'=>'PostsController@random']);
 Route::get('post',  ['as'=> 'posts.index','uses'=>'PostsController@index']);
 Route::get('posts/create',  ['as'=> 'posts.create','uses'=>'PostsController@create']);
 Route::get('posts/{id}',['as' => 'posts.show','uses'=>'PostsController@show']);
+Route::get('posts',['as' => 'posts.store','uses'=>'PostsController@store']);
 Route::get('posts/{id}/edit',['as' => 'posts.edit','uses'=>'PostsController@edit']);
 Route::delete('posts/{id}',['as' => 'posts.destory','uses'=>'PostsController@destory']);
 
 
-//tests
-
-Route::get('test',  ['as'=> 'test.index','uses'=>'PostsController@index']);

@@ -18,7 +18,8 @@ class Post extends Model
 
 
     ];
-    protected $guarded = ['id','created_at'];
+      protected $guarded=['id','created_at'];
+
 
 
 //實際範例
@@ -34,6 +35,10 @@ public function user()
 {
 	return $this -> belongsTo('App\User');
 }
+
+
+
+
 
 
 
