@@ -23,6 +23,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 <!-- Set your background image for this header on the line below. -->
+@include('layouts.partials.notification')
 <header class="intro-header" style="background-image: url('{{ asset('img/post-bg.jpg') }}')">
     <div class="container">
         <div class="row">
